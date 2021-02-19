@@ -69,3 +69,19 @@ the UE enters "RRC IDLE" state, in which your ping command will trigger a
 random access and connection setup. The UE enters that state after one minute
 of not having sent or received any data through the LTE connection, so make
 sure no pings are running.
+
+## Penetration testing tools
+
+After running `docker-compose up` execute the following command to enter the Docker container with penetration testing tools:
+
+```
+
+$ sudo docker exec -it attack-tools bash
+
+root@c68ad3f58a81:/# ping virtual-srsepc
+PING virtual-srsepc (10.80.95.10) 56(84) bytes of data.
+64 bytes from virtual-srsepc.srsltedockeremulated_corenet (10.80.95.10): icmp_seq=1 ttl=64 time=0.099 ms
+64 bytes from virtual-srsepc.srsltedockeremulated_corenet (10.80.95.10): icmp_seq=2 ttl=64 time=0.116 ms
+64 bytes from virtual-srsepc.srsltedockeremulated_corenet (10.80.95.10): icmp_seq=3 ttl=64 time=0.083 ms
+64 bytes from virtual-srsepc.srsltedockeremulated_corenet (10.80.95.10): icmp_seq=4 ttl=64 time=0.527 ms
+```
